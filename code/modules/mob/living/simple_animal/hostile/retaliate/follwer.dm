@@ -328,7 +328,6 @@
 	rapid = 2
 	retreat_distance = 3
 	minimum_distance = 5
-	casingtype = /obj/item/ammo_casing/c9mm
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
 	loot = list(/obj/effect/mob_spawn/human/corpse/wastelander, /obj/item/gun/ballistic/automatic/smg/mini_uzi)
@@ -501,7 +500,6 @@
 	minimum_distance = 5
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
-	casingtype = /obj/item/ammo_casing/a556
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_LIGHT_VOLUME),
@@ -576,7 +574,6 @@
 	speak_emote = list("says")
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
-	casingtype = /obj/item/ammo_casing/a762/sport
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
@@ -719,7 +716,6 @@
 	speak_emote = list("says")
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
-	casingtype = /obj/item/ammo_casing/a762/sport
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
