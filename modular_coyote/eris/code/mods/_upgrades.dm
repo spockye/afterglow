@@ -275,8 +275,6 @@
 		G.projectile_speed_multiplier *= weapon_upgrades[GUN_UPGRADE_PROJ_SPEED_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
 		G.fire_delay *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-		G.autofire_shot_delay *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
-		G.burst_shot_delay *= weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT])
 		G.slowdown *= weapon_upgrades[GUN_UPGRADE_MOVE_DELAY_MULT]
 	if(weapon_upgrades[GUN_UPGRADE_RECOIL])
@@ -314,11 +312,13 @@
 	if(weapon_upgrades[GUN_UPGRADE_EXPLODE])
 		G.rigged = 2
 	if(weapon_upgrades[GUN_UPGRADE_ZOOM])
-		G.zoom_factor += weapon_upgrades[GUN_UPGRADE_ZOOM]
+		G.zoom_factor = weapon_upgrades[GUN_UPGRADE_ZOOM]
 		G.initialize_scope()
 		if(ismob(G.loc))
 			var/mob/user = G.loc
 			user.update_action_buttons()
+	if(weapon_upgrades[GUN_UPGRADE_ZOOM_SLOWDOWN])
+		G.scope_slowdown = weapon_upgrades[GUN_UPGRADE_ZOOM_SLOWDOWN]
 	if(weapon_upgrades[GUN_UPGRADE_THERMAL])
 		G.vision_flags = SEE_MOBS
 	if(weapon_upgrades[GUN_UPGRADE_GILDED])
@@ -335,7 +335,7 @@
 		G.recoil_dat = G.recoil_dat.modifyRating(1, 1, weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
 	if(weapon_upgrades[UPGRADE_COLOR])
 		G.color = weapon_upgrades[UPGRADE_COLOR]
-	
+
 	if(!isnull(weapon_upgrades[GUN_UPGRADE_FORCESAFETY]))
 		G.restrict_safety = TRUE
 		G.safety = weapon_upgrades[GUN_UPGRADE_FORCESAFETY]
@@ -351,12 +351,12 @@
 
 	for(var/datum/firemode/F in G.firemodes)
 		apply_values_firemode(F)
-	
+
 	G.update_firemode()
 
 /datum/component/item_upgrade/proc/add_values_gun(obj/item/gun/G)
 	if(weapon_upgrades[GUN_UPGRADE_FULLAUTO])
-		G.firemodes.Add(new /datum/firemode/automatic/rpm200(G))
+		G.firemodes.Add(new /datum/firemode/automatic(G))
 
 /datum/component/item_upgrade/proc/apply_values_firemode(datum/firemode/F)
 	if(weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
@@ -509,7 +509,7 @@
 			examine_list += span_warning("Disables the safety toggle of the weapon.")
 		else if(weapon_upgrades[GUN_UPGRADE_FORCESAFETY] == 1)
 			examine_list += span_warning("Forces the safety toggle of the weapon to always be on.")
-		
+
 		if(weapon_upgrades[GUN_UPGRADE_DNALOCK] == 1)
 			examine_list += span_warning("Adds a biometric scanner to the weapon.")
 
@@ -563,7 +563,12 @@
 				examine_list += span_notice("Increases scope zoom by x[amount]")
 			else
 				examine_list += span_warning("Decreases scope zoom by x[amount]")
-
+		if(weapon_upgrades[GUN_UPGRADE_ZOOM_SLOWDOWN])
+			var/amount = weapon_upgrades[GUN_UPGRADE_ZOOM_SLOWDOWN]
+			if(amount > 0)
+				examine_list += span_notice("Increases scope slowdown by x[amount]")
+			else
+				examine_list += span_warning("Decreases scope slowdown by x[amount]")
 		examine_list += span_warning("Requires a weapon with the following properties")
 		examine_list += english_list(req_gun_tags)
 

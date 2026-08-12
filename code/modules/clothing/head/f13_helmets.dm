@@ -19,6 +19,8 @@
 
 /obj/item/clothing/head/helmet/f13/proc/colour_text(txt)
 	switch(tier)
+		if (1)
+			return span_brass(txt)
 		if (2)
 			return span_green(txt)
 		if (3)
@@ -242,6 +244,18 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
+/obj/item/clothing/head/helmet/f13/combat/stealth
+	name = "enclave stealth helmet"
+	desc = "An advanced titanium plated, ceramic coated, kevlar, padded helmet with built in stealth technology."
+	icon_state = "enclave_stealth"
+	item_state = "enclave_stealth"
+	armor = ARMOR_VALUE_MEDIUM_T3
+	tier = 3
+	custom_price = PRICE_ULTRA_EXPENSIVE
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR
+	flags_cover = HEADCOVERSEYES
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
+
 /obj/item/clothing/head/helmet/f13/combat/mk2
 	name = "reinforced combat helmet"
 	desc = "An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms."
@@ -299,7 +313,7 @@
 	desc = "An old military grade pre-war combat helmet. This one is marked with NCR colors."
 	icon_state = "combat_helmet_ncr"
 	item_state = "combat_helmet_ncr"
-	armor = ARMOR_VALUE_MEDIUM
+	armor = ARMOR_VALUE_MEDIUM_T3
 	strip_delay = 50
 	flags_inv = HIDEEARS|HIDEHAIR
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
@@ -315,6 +329,8 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR
 	flags_cover = HEADCOVERSEYES
+	armor = ARMOR_VALUE_MEDIUM_T4
+	tier = 4
 
 //Legion
 /obj/item/clothing/head/helmet/f13/combat/legion
@@ -322,7 +338,7 @@
 	desc = "An old military grade pre-war combat helmet. This one is marked with Legion colors."
 	icon_state = "combat_helmet_legion"
 	item_state = "combat_helmet_legion"
-	armor = ARMOR_VALUE_MEDIUM
+	armor = ARMOR_VALUE_MEDIUM_T3
 	strip_delay = 50
 	flags_inv = HIDEEARS|HIDEHAIR
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
@@ -338,6 +354,8 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR
 	flags_cover = HEADCOVERSEYES
+	armor = ARMOR_VALUE_MEDIUM_T4
+	tier = 4
 
 
 /obj/item/clothing/head/helmet/f13/combat/rangerbroken
@@ -373,6 +391,9 @@
 	strip_delay = 60
 	equip_delay_other = 60
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = null
+
 
 /obj/item/clothing/head/helmet/f13/combat/environmental/ComponentInitialize()
 	. = ..()
@@ -469,7 +490,7 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 1)
-	armor = ARMOR_VALUE_LIGHT
+	armor = ARMOR_VALUE_LIGHT_T2
 
 /////////////
 /*LINE LEG */
@@ -481,6 +502,7 @@
 	icon_state = "legrecruit"
 	item_state = "legrecruit"
 	flags_inv = HIDEEARS|HIDEHAIR
+	tier = 2
 
 /obj/item/clothing/head/helmet/f13/legion/prime
 	name = "legion prime helmet"
@@ -499,8 +521,8 @@
 	item_state = "legvet"
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 	flags_inv = HIDEEARS|HIDEHAIR
-	armor = ARMOR_VALUE_MEDIUM_T2
-	tier = 2
+	armor = ARMOR_VALUE_MEDIUM_T3
+	tier = 3
 	custom_price = PRICE_EXPENSIVE
 
 ////////////////
@@ -537,6 +559,8 @@
 	righthand_file = ""
 	icon_state = "legdecan"
 	item_state = "legdecan"
+	armor = ARMOR_VALUE_LIGHT_T3
+	tier = 3
 
 /obj/item/clothing/head/helmet/f13/legion/prime/decan
 	name = "legion prime decanus helmet"
@@ -559,6 +583,8 @@
 	desc = "This helmet is decorated with the pelt of a desert fox."
 	icon_state = "legvex"
 	item_state = "legvex"
+	armor = ARMOR_VALUE_LIGHT_T3
+	tier = 3
 
 /obj/item/clothing/head/helmet/f13/legion/vet/combvexil
 	name = "legion bear vexillarius helmet"
@@ -567,6 +593,7 @@
 	righthand_file = ""
 	icon_state = "legvex_alt"
 	item_state = "legvex_alt"
+	armor = ARMOR_VALUE_LIGHT_T4
 
 /obj/item/clothing/head/helmet/f13/legion/vet/decan/heavy
 	name = "reinforced legion veteran decanus helmet"
@@ -766,6 +793,12 @@
 	item_state = "mutie_ncr_ranger"
 	species_restricted = list("exclude","Human","Ghoul")
 
+/obj/item/clothing/head/helmet/f13/ncr/patrol/helmet
+	name = "NCR patrol helmet"
+	desc = "A combat helmet hand-manufactured in the NCR and issued to patrol rangers."
+	icon_state = "ncr_patrol_helmet"
+	item_state = "ncr_patrol_helmet"
+
 /obj/item/clothing/head/helmet/f13/ncr/veteran
 	name = "NCR veteran ranger combat helmet"
 	desc = "An old combat helmet, out of use around the time of the war."
@@ -929,7 +962,7 @@
 	flags_inv = null
 	flags_cover = null
 	strip_delay = 20
-	dynamic_hair_suffix = "+generic"
+	dynamic_hair_suffix = null
 	dynamic_fhair_suffix = null
 
 /obj/item/clothing/head/helmet/f13/khan/pelt
@@ -964,6 +997,7 @@
 	dynamic_fhair_suffix = null
 	var/helmettoggled = FALSE
 	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_DT_T2)
 	slowdown = HELMET_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 
 /obj/item/clothing/head/helmet/f13/khan/bandana/AltClick(mob/user)
@@ -1052,7 +1086,8 @@
 	icon_state = "raiderpa_helm"
 	item_state = "raiderpa_helm"
 	tier = 3
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_DT_T3)
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_DT_T4)
+	pa_type = /obj/item/clothing/head/helmet/f13/power_armor/raider
 
 /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d/ncr
 	name = "ncr salvaged T-45d helmet"
@@ -1289,11 +1324,37 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	name = "T-45d power helmet"
-	desc = "t's an old pre-War power armor helmet. It's pretty hot inside of it."
+	desc = "it's an old pre-War power armor helmet. It's pretty hot inside of it."
 	icon_state = "t45dhelmet0"
 	item_state = "t45dhelmet0"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d
+
+/obj/item/clothing/head/helmet/f13/power_armor/fh46
+	name = "FH-46 power helmet"
+	desc = "A new Vault 113 design. It's airconditioned."
+	icon_state = "hardsuit-vau0"
+	item_state = "hardsuit-vau0"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	salvaged_type = null
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_DT_T3)
+	tier = 3
+	icon = 'icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = null
+
+/obj/item/clothing/head/helmet/f13/power_armor/fh46/update_icon_state()
+	icon_state = "hardsuit-vau[light_on]"
+	item_state = "hardsuit-vau[light_on]"
+
+
+/obj/item/clothing/head/helmet/f13/power_armor/raider
+	name = "Raider power helmet"
+	desc = "it's a power armor helmet. It's pretty hot inside of it."
+	icon_state = "raiderpa_helm"
+	item_state = "raiderpa_helm"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d/raider
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_DT_T3)
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/update_icon_state()
 	icon_state = "t45dhelmet[light_on]"
@@ -1310,6 +1371,16 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t51b
+
+/obj/item/clothing/head/helmet/f13/power_armor/t51b/midwest
+	name = "Mid West power helmet"
+	desc = "It's a mid west power helmet, typically used by the Brotherhood. It looks somewhat un-nerving."
+	icon_state = "midwestpa_helm"
+	item_state = "midwestpa_helm"
+
+/obj/item/clothing/head/helmet/f13/power_armor/t51b/midwest/grey
+	icon_state = "midwestgrey_helm"
+	item_state = "midwestgrey_helm"
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b/update_icon_state()
 	icon_state = "t51bhelmet[light_on]"

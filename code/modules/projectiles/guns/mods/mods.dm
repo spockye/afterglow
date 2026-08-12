@@ -7,7 +7,6 @@
 /obj/item/gun_upgrade/muzzle
 
 /obj/item/gun_upgrade/underbarrel
-
 /obj/item/gun_upgrade/underbarrel/bipod
 	name = "bipod"
 	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. It greatly reduces recoil when deployed, but also increases the gun\'s weight, making it unwieldy unless braced."
@@ -84,8 +83,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 1.1,
-		GUN_UPGRADE_CHARGECOST = 1.3
+		GUN_UPGRADE_DAMAGE_MULT = 1.3,
+		GUN_UPGRADE_CHARGECOST = 1.6
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_ENERGY)
@@ -219,7 +218,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_RECOIL = 1.1,
-		GUN_UPGRADE_ZOOM = 1.2
+		GUN_UPGRADE_ZOOM = 1.2,
+		GUN_UPGRADE_ZOOM_SLOWDOWN = SCOPED_IN_ADD_SLOWDOWN_MID
 		)
 	I.gun_loc_tag = GUN_SCOPE
 	I.req_gun_tags = list(GUN_SCOPE)
@@ -233,8 +233,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_RECOIL = 1.3,
-		GUN_UPGRADE_ZOOM = 2
+		GUN_UPGRADE_RECOIL = 1.05,
+		GUN_UPGRADE_ZOOM = 2,
+		GUN_UPGRADE_ZOOM_SLOWDOWN = SCOPED_IN_ADD_SLOWDOWN_MID
 		)
 	I.gun_loc_tag = GUN_SCOPE
 	I.req_gun_tags = list(GUN_SCOPE)
@@ -332,7 +333,8 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_OFFSET = rand(1,3),
-		GUN_UPGRADE_ZOOM = rand(4,8)/10
+		GUN_UPGRADE_ZOOM = rand(4,8)/10,
+		GUN_UPGRADE_ZOOM_SLOWDOWN = SCOPED_IN_ADD_SLOWDOWN_MID
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_SCOPE
@@ -401,6 +403,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_ZOOM = 2,
+		GUN_UPGRADE_ZOOM_SLOWDOWN = SCOPED_IN_ADD_SLOWDOWN_LOW
 	)
 	I.destroy_on_removal = TRUE
 	I.gun_loc_tag = GUN_SCOPE
@@ -418,8 +421,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PEN_MULT = 1.2,
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1.2,
+		GUN_UPGRADE_PEN_MULT = 1.5,
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1.3,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.5
 		)
 	I.gun_loc_tag = GUN_BARREL
@@ -460,7 +463,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 1.2,
-	GUN_UPGRADE_DAMAGE_MULT = 1.15,
+	GUN_UPGRADE_DAMAGE_MULT = 1.3,
 	GUN_UPGRADE_CHARGECOST = 1.5)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -475,9 +478,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 0.9, // lowering the power output of the weapon should realistically lower the recoil - risingstarslash
+	GUN_UPGRADE_RECOIL = 0.8, // lowering the power output of the weapon should realistically lower the recoil - risingstarslash
 	GUN_UPGRADE_DAMAGE_MULT = 0.5,
-	GUN_UPGRADE_CHARGECOST = 0.65)
+	GUN_UPGRADE_CHARGECOST = 0.3)
 	//GUN_UPGRADE_FULLAUTO = TRUE)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -541,8 +544,8 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_PROJ_SPEED_MULT = 1.2,
-		GUN_UPGRADE_PEN_MULT = 1.3,
+		GUN_UPGRADE_PROJ_SPEED_MULT = 1.3,
+		GUN_UPGRADE_PEN_MULT = 1.4,
 		GUN_UPGRADE_FIRE_DELAY_MULT = 1.4,
 		GUN_UPGRADE_RECOIL = 1.4
 		)

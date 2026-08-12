@@ -12,6 +12,17 @@
 	skill_level = HARD_CHECK
 	falls_back_on_outdoors = TRUE
 
+/datum/crafting_recipe/armor_repair_kit_5
+	name = "5x Armor Repair Kit"
+	result = list(/obj/item/armor_repair_kit = 5)
+	reqs = list(/obj/item/stack/crafting/metalparts = 10,
+				/obj/item/stack/sheet/cloth = 50)
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	skill_level = HARD_CHECK
+	falls_back_on_outdoors = TRUE
+	time = 150
+
 /datum/crafting_recipe/armorkit
 	name = "Armor Kit"
 	result = /obj/item/clothing/suit/armor/tiered/light/kit
@@ -752,7 +763,7 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/ncr_facewrap
 	name = "Facewrap"
-	result = /obj/item/clothing/mask/facewrap
+	result = /obj/item/clothing/mask/ncr_facewrap
 	reqs = list(/obj/item/stack/sheet/cloth = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
@@ -1217,6 +1228,30 @@ datum/crafting_recipe/steelbib/heavy
 	always_available = FALSE
 	skill_level = HARD_CHECK
 
+/datum/crafting_recipe/raiderpowerarmorconversion
+	name = "Salvaged Raider Power Armor"
+	result = /obj/item/clothing/suit/armor/tiered/heavy/salvaged_pa/tier3/t45d/raider
+	reqs = list(/obj/item/clothing/suit/armor/tiered/heavy/salvaged_pa/tier3/recycled = 1,
+				/obj/item/stack/sheet/plasteel = 40)
+	tools = list(TOOL_WELDER, TOOL_AWORKBENCH)
+	time = 40
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = TRUE
+	skill_level = EASY_CHECK
+
+/datum/crafting_recipe/raiderpowerarmorhelmetconversion
+	name = "Salvaged Raider Power Armor Helmet"
+	result = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d/raider
+	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d = 1,
+				/obj/item/stack/sheet/plasteel = 10)
+	tools = list(TOOL_WELDER, TOOL_AWORKBENCH)
+	time = 40
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = TRUE
+	skill_level = EASY_CHECK
+
 /datum/crafting_recipe/legionparmahelmetconversion
 	name = "Salvaged Parma T-45 helmet"
 	result = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d/legion
@@ -1574,3 +1609,45 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 	skill_level = EASY_CHECK
+
+
+/datum/crafting_recipe/vault_pa_body
+	name = "FH-46 Body"
+	result = /obj/item/clothing/suit/armor/tiered/power_armor/fh46
+	reqs = list(/obj/item/clothing/suit/armor/tiered/medium/vest = 1,
+				/obj/item/stack/crafting/goodparts = 4,
+				/obj/item/stack/sheet/cloth = 20,
+				/obj/item/pa_kit = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/metal = 5,
+				/obj/item/stock_parts/cell/high = 1
+				)
+	time = 120
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+	skill_level = EXPERT_CHECK
+
+/datum/crafting_recipe/vault_pa_body/bos
+	name = "FH-46 Body"
+	result = /obj/item/clothing/suit/armor/tiered/power_armor/fh46/bos
+
+/datum/crafting_recipe/vault_pa_body/unmarked
+	name = "FH-46 Body"
+	result = /obj/item/clothing/suit/armor/tiered/power_armor/fh46/unmarked
+
+/datum/crafting_recipe/vault_pa_helmet
+	name = "FH-46 Helmet"
+	result = /obj/item/clothing/head/helmet/f13/power_armor/fh46
+	reqs = list(/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/crafting/goodparts = 4,
+				/obj/item/stack/sheet/cloth = 10,
+				/obj/item/pa_kit = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/metal = 5
+				)
+	time = 80
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+	skill_level = EXPERT_CHECK

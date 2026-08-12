@@ -88,6 +88,8 @@
 	heat_protection = CHEST|GROIN|ARMS|LEGS // chyll
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	tier = 2
+	armor = ARMOR_VALUE_LIGHT_T2
 
 /obj/item/clothing/suit/armor/tiered/light/tribal/wastetribe
 	name = "wasteland tribe armor"
@@ -178,6 +180,8 @@
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 	custom_price = PRICE_REALLY_EXPENSIVE
+	mob_overlay_icon = null
+	icon = 'icons/obj/clothing/suits.dmi'
 
 /obj/item/clothing/suit/armor/tiered/hooded/light/cloak/Initialize()
 	/// make sure the parents work first for this, child lists take priority
@@ -205,7 +209,8 @@
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_LIGHT_T2
+	armor = ARMOR_VALUE_LIGHT_T3
+	tier = 3
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
@@ -215,7 +220,7 @@
 	item_state = "clawheadcloak"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_LIGHT_T2
+	armor = ARMOR_VALUE_LIGHT_T3
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/armor/tiered/hooded/light/cloak/goliath/tatteredred
@@ -248,7 +253,8 @@
 	// body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_LIGHT_T3
+	armor = ARMOR_VALUE_LIGHT_T4
+	tier = 4
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 	body_parts_hidden = 0
 
@@ -260,7 +266,7 @@
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_LIGHT_T3
+	armor = ARMOR_VALUE_LIGHT_T4
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/armor/tiered/hooded/light/cloak/shunter
@@ -514,7 +520,7 @@
 	desc = "Armor in the motorcycle-football style, either with intact original polymer plating, or reinforced with gecko hide."
 	icon_state = "leather_armor_mk2"
 	item_state = "leather_armor_mk2"
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_UP_DT_T3)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_UP_DT_T1)
 	custom_price = PRICE_REALLY_EXPENSIVE
 	armor = ARMOR_VALUE_LIGHT_T3
 	tier = 3
@@ -698,8 +704,19 @@
 /obj/item/clothing/suit/armor/tiered/light/ncr/trailranger
 	name = "NCR ranger vest"
 	desc = "A quaint little jacket and scarf worn by NCR trail rangers."
-	icon_state = "ncr_ranger"
-	item_state = "ncr_ranger"
+	icon_state = "ncr_trail_ranger"
+	item_state = "ncr_trail_ranger"
+	armor_tokens = list()
+	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	custom_price = PRICE_REALLY_EXPENSIVE
+	armor = ARMOR_VALUE_LIGHT_T3
+	tier = 3
+
+/obj/item/clothing/suit/armor/tiered/light/ncr/recon_ranger
+	name = "NCR ranger vest"
+	desc = "A thicker than average duster worn by NCR recon rangers out in the field. It's not heavily armored by any means, but is easy to move around in and provides excellent protection from the harsh desert environment."
+	icon_state = "ncr_recon_ranger"
+	item_state = "ncr_recon_ranger"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	custom_price = PRICE_REALLY_EXPENSIVE
@@ -746,10 +763,10 @@
 	icon_state = "legion_prime"
 	item_state = "legion_prime"
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T3)
 	custom_price = PRICE_ABOVE_EXPENSIVE
-	armor = ARMOR_VALUE_LIGHT_T2
-	tier = 2
+	armor = ARMOR_VALUE_LIGHT_T3
+	tier = 3
 
 /obj/item/clothing/suit/armor/tiered/light/legion/explorer
 	name = "legion explorer armor"
@@ -770,7 +787,7 @@
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T2)
 	custom_price = PRICE_REALLY_EXPENSIVE
-	armor = ARMOR_VALUE_LIGHT_T3
+	armor = ARMOR_VALUE_LIGHT_T4
 	tier = 3
 
 //////////////////////////
@@ -881,12 +898,12 @@
 	equip_delay_other = 10
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	custom_price = PRICE_ABOVE_EXPENSIVE
 	armor = ARMOR_VALUE_LIGHT_T2
+	special_modifications = list("a" = 1, "e" = 1)
 
 /obj/item/cloathing/suit/toggle/labcoat/khan_jacket/reinforced
 	name = "Reinforced Great Khan jacket"
@@ -923,7 +940,7 @@
 	armor = ARMOR_VALUE_LIGHT_T2
 	tier = 2
 	hoodtype = /obj/item/clothing/head/hooded/sciencesuit
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
+	clothing_flags = STOPSPRESSUREDAMAGE
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -942,7 +959,7 @@
 	tier = 2
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	slowdown = ARMOR_SLOWDOWN_LIGHT
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
+	clothing_flags = STOPSPRESSUREDAMAGE
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	cold_protection = HEAD

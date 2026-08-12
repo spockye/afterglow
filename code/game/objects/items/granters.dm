@@ -550,8 +550,8 @@
 	user.invalidate_skill_caches()
 	for(var/crafting_recipe_type in crafting_recipe_types)
 		var/datum/crafting_recipe/R = crafting_recipe_type
-		if (user.skill_check(initial(R.skill_needed), initial(R.skill_level)))
-			if (!already_learned.Find(crafting_recipe_type))
+		if (user.skill_check(initial(R.skill_needed), initial(R.skill_level)) || (R.falls_back_on_outdoors && user.skill_check(SKILL_OUTDOORSMAN, initial(R.skill_level))))
+			if (!already_learned.Find(crafting_recipe_type) || !oneuse)
 				user.mind.teach_crafting_recipe(crafting_recipe_type)
 				to_chat(user,span_notice("You learned how to make [initial(R.name)]."))
 				already_learned |= crafting_recipe_type
@@ -631,7 +631,19 @@
 	icon_state = "gab3"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-	crafting_recipe_types = list(/datum/crafting_recipe/scope, /datum/crafting_recipe/suppressor, /datum/crafting_recipe/ergonomic_grip, /datum/crafting_recipe/metal_guard, /datum/crafting_recipe/forged_barrel, /datum/crafting_recipe/booster, /datum/crafting_recipe/laserguide, /datum/crafting_recipe/gigalens, /datum/crafting_recipe/battshunt, /datum/crafting_recipe/overdrivemod, /datum/crafting_recipe/coolant)
+	crafting_recipe_types = list(/datum/crafting_recipe/scope/low,
+								 /datum/crafting_recipe/scope/mid,
+								 /datum/crafting_recipe/scope/high,
+								 /datum/crafting_recipe/suppressor,
+								 /datum/crafting_recipe/ergonomic_grip,
+								 /datum/crafting_recipe/metal_guard,
+								 /datum/crafting_recipe/forged_barrel,
+								 /datum/crafting_recipe/booster,
+								 /datum/crafting_recipe/laserguide,
+								 /datum/crafting_recipe/gigalens,
+								 /datum/crafting_recipe/battshunt,
+								 /datum/crafting_recipe/overdrivemod,
+								 /datum/crafting_recipe/coolant)
 
 /obj/item/book/granter/crafting_recipe/gunsmith_four
 	name = "Guns and Bullets, Part 4"
@@ -677,6 +689,19 @@
 	skill_needed = TRUE
 	requires_skill = list(SKILL_REPAIR = HARD_CHECK)
 	var/datum/design/design_print
+
+/obj/item/book/granter/crafting_recipe/blueprint/fh_46
+	name = "FH-46 Blueprints"
+	icon_state = "blueprint2"
+	oneuse = FALSE
+	requires_skill = list(SKILL_REPAIR = EXPERT_CHECK)
+	crafting_recipe_types = list(/datum/crafting_recipe/vault_pa_body, /datum/crafting_recipe/vault_pa_helmet)
+
+/obj/item/book/granter/crafting_recipe/blueprint/fh_46/bos
+	crafting_recipe_types = list(/datum/crafting_recipe/vault_pa_body/bos, /datum/crafting_recipe/vault_pa_helmet)
+
+/obj/item/book/granter/crafting_recipe/blueprint/fh_46/unmarked
+	crafting_recipe_types = list(/datum/crafting_recipe/vault_pa_body/unmarked, /datum/crafting_recipe/vault_pa_helmet)
 
 /obj/item/book/granter/crafting_recipe/blueprint/n99
 	name = "10mm pistol blueprint"

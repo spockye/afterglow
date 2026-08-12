@@ -12,7 +12,7 @@ here's a tip, go search DEFINES/access.dm
 
 // Headsets for everyone!!
 /datum/outfit/job/den
-	name = "Nash Default Template"
+	name = "N.T Default Template"
 	//ears = /obj/item/radio/headset/headset_town
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
@@ -39,16 +39,16 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Ripley"
-	description = "You are the civil leader of the Town of Ripley. You were chosen by the people to represent and lead them from your manor. Your town is in a terse situation with the slaver town to the south, Redwater. While not at war, you will have to work to keep your people safe from their predations. The Tribals to the south east are also a nuisance but it's best not to provoke them needlessly. Do what's best for the town, and it's people. All while lining your pockets occasionally, of course."
-	enforces = "The Secretary is your stand-in replacement, and under this the Sheriff."
+	supervisors = "N.T"
+	description = "You are the civil leader of N.T. You were chosen by the people to represent and lead them from your manor. Do what's best for the town, and it's people. All while lining your pockets occasionally, of course."
+	enforces = "The Sheriff is your stand-in replacement."
 	selection_color = "#d7b088"
 
 	exp_requirements = 750
 
 	outfit = /datum/outfit/job/den/f13mayor
-	access = list(ACCESS_BAR, ACCESS_MAYOR, ACCESS_OFFICER, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
-	minimal_access = list(ACCESS_BAR, ACCESS_MAYOR, ACCESS_OFFICER, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
+	access = list(ACCESS_BAR, ACCESS_MAYOR, ACCESS_CLINIC, ACCESS_OFFICER)
+	minimal_access = list(ACCESS_BAR, ACCESS_MAYOR, ACCESS_CLINIC, ACCESS_OFFICER)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis
@@ -103,11 +103,11 @@ Mayor
 	title = "Secretary"
 	flag = F13SECRETARY
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "The Mayor"
-	description = "The settlement of Ripley is a busy place, and the Mayor often can't handle everything by themselves. You are here to help them with anything and everything they require, and make sure the more trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings within the manor. An efficient and smooth running town means a happy Mayor - just remember that if things go wrong, you're a convenient scapegoat."
-	enforces = "You are the stand-in leader of Ripley if a Mayor does not exist."
+	description = "The settlement of N.T is a busy place, and the Mayor often can't handle everything by themselves. You are here to help them with anything and everything they require, and make sure the more trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings within the manor. An efficient and smooth running town means a happy Mayor - just remember that if things go wrong, you're a convenient scapegoat."
+	enforces = "You are the stand-in leader of N.T if a Mayor does not exist."
 	selection_color = "#d7b088"
 	exp_requirements = 400
 
@@ -118,8 +118,8 @@ Mayor
 	/datum/outfit/loadout/pw
 	)
 
-	access = list(ACCESS_BAR, ACCESS_MAYOR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
-	minimal_access = list(ACCESS_BAR, ACCESS_MAYOR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_FOLLOWER)
+	access = list(ACCESS_BAR, ACCESS_MAYOR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_MEDICAL)
+	minimal_access = list(ACCESS_BAR, ACCESS_MAYOR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_MEDICAL)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis
@@ -203,8 +203,8 @@ Mayor
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Mayor"
-	description = "You are the civil enforcer of Ripley, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Ripley undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
-	enforces = "You are the stand-in leader of Ripley if a Mayor or Secretary does not exist."
+	description = "You are the civil enforcer of N.T, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave N.T undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
+	enforces = "You are the stand-in leader of N.T if a Mayor does not exist."
 	selection_color = "#d7b088"
 	exp_requirements = 750
 
@@ -217,8 +217,8 @@ Mayor
 	/datum/outfit/loadout/thegangster
 	)
 
-	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER, ACCESS_OFFICER)
-	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLINIC, ACCESS_FOLLOWER, ACCESS_OFFICER)
+	access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_OFFICER)
+	minimal_access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_OFFICER)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis
@@ -266,7 +266,7 @@ Mayor
 
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/c4570 = 3,
-		/obj/item/gun_upgrade/scope/watchman = 1
+		/obj/item/gun_upgrade/scope/mid = 1
 	)
 
 /datum/outfit/loadout/thechief
@@ -288,7 +288,7 @@ Mayor
 	head = /obj/item/clothing/head/helmet/f13/combat/town
 	neck = /obj/item/storage/belt/shoulderholster/ranger45
 	suit_store = /obj/item/gun/ballistic/automatic/smg/tommygun
-	backpack_contents = list(/obj/item/ammo_box/magazine/tommygunm45/stick = 2,
+	backpack_contents = list(/obj/item/ammo_box/magazine/tommygunm45 = 2,
 		)
 
 /*--------------------------------------------------------------*/
@@ -297,11 +297,11 @@ Mayor
 	title = "Deputy"
 	flag = F13DEPUTY
 	department_flag = DEP_OASIS
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "The Sheriff"
-	description = "You are a loyal protector of Ripley, keeping the settlement within firm control under the authority of the Mayor. The sheriff is your direct superior, and you should expect to take your day-to-day orders from them. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Ripley undefended, and don't let its people die out."
-	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Ripley if a Mayor or Secretary does not exist."
+	description = "You are a loyal protector of N.T, keeping the settlement within firm control under the authority of the Mayor. The sheriff is your direct superior, and you should expect to take your day-to-day orders from them. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave N.T undefended, and don't let its people die out."
+	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of N.T if a Mayor or Secretary does not exist."
 	selection_color = "#dcba97"
 	exp_type = EXP_TYPE_OASIS
 	exp_requirements = 300
@@ -358,7 +358,7 @@ Mayor
 		)
 
 /datum/outfit/loadout/police
-	name = "Ripley PD"
+	name = "N.T PD"
 	uniform = /obj/item/clothing/under/f13/police/officer
 	suit = /obj/item/clothing/suit/armor/tiered/medium/vest/bulletproof
 	head = /obj/item/clothing/head/helmet/f13/town/deputy
@@ -393,10 +393,10 @@ Mayor
 	title = "Prospector"
 	flag = F13PROSPECTOR
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "The Mayor"
-	description = "Prospecting is a complicated business. Some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the valuable skills of mining and scavenging the ruins of fallen empires. The settlement of Ripley understands the value of this, and you've found purpose within their mines. Sell the materials you find to the highest bidder - the local store may be particularly interested in metals."
+	description = "Prospecting is a complicated business. Some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the valuable skills of mining and scavenging the ruins of fallen empires. The settlement of N.T understands the value of this, and you've found purpose within their mines. Sell the materials you find to the highest bidder - the local store may be particularly interested in metals."
 	enforces = "Mining is a public service, and you are under control of local governance - but by default you are expected to work with private businesses and individual clients."
 	selection_color = "#dcba97"
 
@@ -494,16 +494,16 @@ Mayor
 	title = "Doctor"
 	flag = F13DENDOC
 	department_flag = DEP_OASIS
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "The Mayor"
-	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the settlement of Ripley. Just remember that you're no Follower - medicine doesn't come for free, and you aren't here out of the kindness of your heart. Make sure to turn a profit on your services, or the Mayor might reconsider your position!"
+	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the settlement of N.T. Just remember that you're no Follower - medicine doesn't come for free, and you aren't here out of the kindness of your heart. Make sure to turn a profit on your services, or the Mayor might reconsider your position!"
 	enforces = "Medicine is a public service, and you are under control of local governance - but remember public doesn't equate to free."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13dendoc
-	access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_CLONING, ACCESS_FOLLOWER)
-	minimal_access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_CLONING, ACCESS_FOLLOWER)
+	access = list(ACCESS_BAR, ACCESS_CLINIC)
+	minimal_access = list(ACCESS_BAR, ACCESS_CLINIC)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis
@@ -516,7 +516,7 @@ Mayor
 /datum/outfit/job/den/f13dendoc
 	name = "Doctor"
 	jobtype = /datum/job/oasis/f13dendoc
-	ears = /obj/item/radio/headset/headset_town/medical
+	ears = /obj/item/radio/headset/headset_town
 	uniform = /obj/item/clothing/under/f13/medic
 	neck = /obj/item/clothing/neck/stethoscope
 	suit = /obj/item/clothing/suit/toggle/labcoat
@@ -536,6 +536,8 @@ Mayor
 		/obj/item/reagent_containers/glass/beaker/meta,
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/circuitboard/machine/bloodbankgen,
+		/obj/item/gun/ballistic/revolver/needler,
+		/obj/item/ammo_box/needle = 4,
 		)
 
 /datum/outfit/job/den/f13dendoc/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -642,19 +644,20 @@ Mayor
 	title = "Citizen"
 	flag = F13SETTLER
 	department_flag = DEP_OASIS
-	total_positions = 4
-	spawn_positions = 4
-	supervisors = "Ripley's laws"
-	description = "You are a citizen living in Ripley. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "N.T's laws"
+	description = "You are a citizen living in N.T. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
 	smutant_outfit = /datum/outfit/smutant/town
 
 	loadout_options = list(
-		/datum/outfit/loadout/gambler,
-		/datum/outfit/loadout/resident,
-		/datum/outfit/loadout/outdoorsman
+		/datum/outfit/loadout/townmechanic,
+		/datum/outfit/loadout/townprospector,
+		/datum/outfit/loadout/townsettler,
+		/datum/outfit/loadout/townlifeguard,
 	)
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
@@ -676,6 +679,7 @@ Mayor
 /datum/outfit/job/den/f13settler
 	name = "Citizen"
 	jobtype = /datum/job/oasis/f13settler
+	ears = /obj/item/radio/headset/headset_town
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -684,7 +688,10 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/bag/money/small/settler = 1,
-		/obj/item/melee/onehanded/knife/hunting = 1
+		/obj/item/melee/onehanded/knife/hunting = 1,
+		/obj/item/stack/f13Cash/caps/onezerozero = 1,
+		/obj/item/kit_spawner/waster = 1,
+		/obj/item/reagent_containers/pill/healingpowder = 1,
 		)
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
@@ -712,53 +719,56 @@ Mayor
 		/obj/item/clothing/under/f13/cowboyg,
 		/obj/item/clothing/under/f13/cowboyt)
 
-/datum/outfit/loadout/gambler
-	name = "Gambler"
-	suit = /obj/item/clothing/suit/vickyblack
-	gloves = /obj/item/pda
-	shoes = /obj/item/clothing/shoes/laceup
-	uniform = /obj/item/clothing/under/f13/worn
-	gloves = /obj/item/clothing/gloves/f13/leather
-	backpack_contents = list(/obj/item/reagent_containers/food/drinks/flask = 1,
-		/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
-		/obj/item/ammo_box/magazine/m22 = 1,
-		/obj/item/stack/f13Cash/caps/twofivezero = 1,
-	)
-
-/datum/outfit/loadout/resident
-	name = "Resident"
-	head = /obj/item/clothing/head/soft/grey
-	belt = /obj/item/storage/belt/utility/waster
-	suit = /obj/item/clothing/under/f13/mechanic
-	gloves = /obj/item/clothing/gloves/color/black
-	shoes = /obj/item/clothing/shoes/sneakers/noslip
-	neck = /obj/item/storage/belt/shoulderholster
-	suit_store = /obj/item/gun/ballistic/revolver/single_shotgun
-	backpack_contents = list(/obj/item/ammo_box/shotgun/buck = 1,
-		/obj/item/stack/f13Cash/caps/onezerozero = 1,
-		/obj/item/storage/box/ration/menu_two = 1,
-		/obj/item/storage/box/ration/menu_eight = 1,
-		/obj/item/reagent_containers/food/drinks/flask/survival = 1,
-	)
-
-/datum/outfit/loadout/outdoorsman
-	name = "Outdoorsman"
-	head = /obj/item/clothing/head/soft/grey
-	suit = /obj/item/clothing/suit/armor/tiered/light/leather/tanvest
-	suit_store = /obj/item/gun/ballistic/rifle/mag/sportcarbine
-	belt = /obj/item/melee/onehanded/knife/bowie
-	uniform = /obj/item/clothing/under/f13/cowboyt
+/datum/outfit/loadout/townsettler
+	name = "Settler"
+	suit = /obj/item/clothing/suit/armor/tiered/light/leather/leathersuit
 	gloves = /obj/item/clothing/gloves/botanic_leather
-	shoes = /obj/item/clothing/shoes/f13/peltboots
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m22 = 2,
-		/obj/item/fishingrod = 1,
-		/obj/item/binoculars = 1,
-		/obj/item/crafting/campfirekit = 1,
-		/obj/item/storage/fancy/rollingpapers/makeshift = 1,
+	uniform = /obj/item/clothing/under/f13/worn
+	backpack_contents = list(/obj/item/seeds/xander = 1,
+		/obj/item/seeds/poppy/broc = 1,
+		/obj/item/seeds/ambrosia/deus = 1,
+		/obj/item/stack/sheet/mineral/wood/fifty = 1,
+	)
+
+/datum/outfit/loadout/townprospector
+	name = "Prospector"
+	head = /obj/item/clothing/head/helmet/armyhelmet
+	suit = /obj/item/clothing/suit/armor/tiered/light/leather/jacket_reinf
+	suit_store = /obj/item/storage/bag/ore
+	backpack_contents = list(/obj/item/mining_scanner= 1,
+		/obj/item/pickaxe/drill = 1,
+		/obj/item/flashlight/lantern = 1,
+		/obj/item/reagent_containers/blood/radaway = 1,
 		/obj/item/reagent_containers/food/drinks/flask/survival = 1,
 	)
 
+/datum/outfit/loadout/townmechanic
+	name = "Mechanic"
+	suit = /obj/item/clothing/suit/armor/tiered/light/kit
+	uniform = /obj/item/clothing/under/f13/mechanic
+	gloves = /obj/item/clothing/gloves/color/yellow
+	neck = /obj/item/clothing/neck/apron/labor
+	backpack_contents = list(
+		/obj/item/stack/crafting/metalparts/five = 1,
+		/obj/item/stack/crafting/goodparts = 2,
+		/obj/item/clothing/glasses/welding = 1,
+		/obj/item/stack/crafting/electronicparts/five = 1,
+		/obj/item/melee/onehanded/club/tireiron = 1,
+		/obj/item/book/granter/crafting_recipe/gunsmith_four = 1,
+
+	)
+
+datum/outfit/loadout/townlifeguard
+	name = "Lifeguard"
+	glasses = /obj/item/clothing/glasses/sunglasses
+	shoes = /obj/item/clothing/shoes/f13/swimfins
+	backpack_contents = list(
+		/obj/item/toy/poolnoodle/blue = 1,
+		/obj/item/storage/firstaid/ancient = 1,
+		/obj/item/smelling_salts = 1,
+		/obj/item/storage/pill_bottle/chem_tin/buffout = 1,
+		/obj/item/reagent_containers/food/drinks/flask/survival = 1,
+		)
 /*----------------------------------------------------------------
 --							Detective							--
 ----------------------------------------------------------------*/
@@ -766,9 +776,9 @@ Mayor
 /datum/job/oasis/f13detective
 	title = "Detective"
 	flag = F13DETECTIVE
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "paying clients and Ripley's laws"
+	total_positions = 0
+	spawn_positions = 0
+	supervisors = "paying clients and N.T's laws"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/oasis/f13detective
 	smutant_outfit = /datum/outfit/smutant/town/police/detective
@@ -826,7 +836,7 @@ Mayor
 	total_positions = 1
 	spawn_positions = 2
 	supervisors = "The Mayor"
-	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of Ripley. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Ripley, but perhaps deal-making will take you into other alliances."
+	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of N.T. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of N.T, but perhaps deal-making will take you into other alliances."
 	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/den/f13banker
@@ -901,14 +911,14 @@ Mayor
 
 //The Quartermaster
 /datum/job/oasis/f13quartermaster
-	title = "Ripley Quartermaster"
+	title = "N.T Quartermaster"
 	flag = F13QUARTERMASTER
 	department_flag = DEP_OASIS
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "the free market and Ripley's laws"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the free market and N.T's laws"
 	description = "You are the team leader for your various workers in the shop. Guide them as you see fit towards a profitable future."
-	enforces = "The Ripley store is part of your workplace, but it is not your workplace alone. You should try to work with your team in order to turn a profit."
+	enforces = "The N.T store is part of your workplace, but it is not your workplace alone. You should try to work with your team in order to turn a profit."
 	selection_color = "#dcba97"
 	exp_requirements = 400
 
@@ -930,7 +940,7 @@ Mayor
 	)
 
 /datum/outfit/job/den/f13quartermaster
-	name = "Ripley Quartermaster"
+	name = "N.T Quartermaster"
 	jobtype = /datum/job/oasis/f13quartermaster
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
@@ -998,14 +1008,14 @@ Mayor
 
 //The Trade Workers
 /datum/job/oasis/f13shopkeeper
-	title = "Ripley Trade Worker"
+	title = "N.T Trade Worker"
 	flag = F13SHOPKEEPER
 	department_flag = DEP_OASIS
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the free market and Ripley's laws"
-	description = "You are one of the many workers who live in the city of Ripley. Working with the town council you have rented out a space in the shop for you to make your living."
-	enforces = "The Ripley store is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
+	total_positions = 0
+	spawn_positions = 0
+	supervisors = "the free market and N.T's laws"
+	description = "You are one of the many workers who live in the city of N.T. Working with the town council you have rented out a space in the shop for you to make your living."
+	enforces = "The N.T store is part of your workplace, but it is not your workplace alone. You should try work with the other trade workers to try and turn a profit."
 	selection_color = "#dcba97"
 	exp_requirements = 300
 
@@ -1097,90 +1107,3 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
-
-
-/datum/job/oasis/family_head
-	title = "Family Head"
-	flag = F13SETTLER
-	department_flag = F13SETTLER
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "Yourself"
-	description = "You are the head of the family who runs the farm on which the food that supplies the region is grown, it is you job to navigate the difficult political waters, you have an arrangement with the followers and khans already agreed."
-	enforces = "The family and all of it's affairs are your business."
-	selection_color = "#5b6aaf"
-	outfit = /datum/outfit/job/den/f13settler
-
-	loadout_options = list(
-		/datum/outfit/loadout/resident,
-		/datum/outfit/loadout/outdoorsman
-	)
-	access = list(ACCESS_BAR)
-	minimal_access = list(ACCESS_BAR)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
-			/datum/job/khan
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-			/datum/job/khan
-		)
-	)
-
-/datum/job/oasis/family_member
-	title = "Family Member"
-	flag = F13SETTLER
-	department_flag = F13SETTLER
-	total_positions = 4
-	spawn_positions = 4
-	supervisors = "The head of the family"
-	description = "You are a member of the religious family that supply the Khans and Followers with food, you may not like them but the arrangement is such that they protect and you farm."
-	enforces = "You can order the farm hands around."
-	selection_color = "#5b6aaf"
-	outfit = /datum/outfit/job/den/f13settler
-
-	loadout_options = list(
-		/datum/outfit/loadout/resident,
-		/datum/outfit/loadout/outdoorsman
-	)
-	access = list(ACCESS_BAR)
-	minimal_access = list(ACCESS_BAR)
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
-			/datum/job/khan
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-			/datum/job/khan
-		)
-	)
-
-/datum/job/oasis/family_farmer
-	title = "Farm Hand"
-	flag = F13SETTLER
-	department_flag = F13SETTLER
-	total_positions = 10
-	spawn_positions = 10
-	supervisors = "The Family"
-	description = "You've found yourself working for the family in exchange for food and a roof, how you got here and what your ambitions are is up to you but for now you should do as they say."
-	enforces = "You work for the family in exchange for food and a roof over your head."
-	selection_color = "#5b6aaf"
-	outfit = /datum/outfit/job/den/f13settler
-	loadout_options = list(
-		/datum/outfit/loadout/resident,
-		/datum/outfit/loadout/outdoorsman
-	)
-	access = list()
-	minimal_access = list()
-	matchmaking_allowed = list(
-		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
-			/datum/job/khan
-		),
-		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-			/datum/job/khan
-		)
-	)

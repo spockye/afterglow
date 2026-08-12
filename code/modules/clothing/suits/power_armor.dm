@@ -25,7 +25,7 @@
 	/// Cell that is currently installed in the suit
 	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high
 	/// How much power the cell consumes each process tick
-	var/usage_cost = 5 // With high-capacity cell it'd run out of charge in ~33 minutes
+	var/usage_cost = 2 // With high-capacity cell it'd run out of charge in ~33 minutes
 	/// If TRUE - suit has ran out of charge and is currently affected by slowdown from it
 	var/no_power = FALSE
 	/// How much slowdown is added when suit is unpowered
@@ -84,7 +84,7 @@
 	ADD_TRAIT(user, SPREAD_CONTROL, "PA_spreadcontrol")
 	ADD_TRAIT(user, TRAIT_POWER_ARMOR, "PA_worn_trait") // General effects from being in PA
 	var/mob/living/liver = user
-	liver.modify_special(list("s" = 1), src)
+	liver.modify_special(special_modifications, src)
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/pa_speedmod, multiplicative_slowdown = ARMOR_SLOWDOWN_PA * ARMOR_SLOWDOWN_GLOBAL_MULT)
 
 /obj/item/clothing/suit/armor/tiered/power_armor/dropped(mob/user)
@@ -303,8 +303,6 @@
 
 /obj/item/clothing/suit/armor/tiered/power_armor/emp_act(mob/living/carbon/human/owner, severity)
 	. = ..()
-	if(. & EMP_PROTECT_SELF)
-		return
 	if(!powered)
 		return
 	if(cell)
@@ -332,10 +330,29 @@
 
 /obj/item/clothing/suit/armor/tiered/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if((attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
-		if(prob(70) && (damage < deflect_damage) && (armour_penetration <= 0)) // Weak projectiles like shrapnel get deflected
+		if((armour_penetration <= 0) && (damage < deflect_damage) && prob(70)) // Weak projectiles like shrapnel get deflected
 			block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
+
+/obj/item/clothing/suit/armor/tiered/power_armor/fh46
+	name = "FH-46 power armor"
+	desc = "Developed and manufactured by Vault 113 after project Fenalis-Harker. A leaner stripped down modern version of PA."
+	icon_state = "hardsuit-vault"
+	item_state = "hardsuit-vault"
+	salvaged_type = /obj/item/clothing/suit/armor/tiered/heavy/salvaged_pa/tier3/fh46
+	tier = 3
+	armor = ARMOR_VALUE_SALVAGE_T3
+	special_modifications =  list("s" = 3)
+	armor_tier_desc = "This is a suit of power armor, able to withstand a tank shell and still finish a marathon. (10% Slowdown, +3 Strength - while powered)"
+
+/obj/item/clothing/suit/armor/tiered/power_armor/fh46/unmarked
+	icon_state = "hardsuit-vault-unmarked"
+	item_state = "hardsuit-vault-unmarked"
+
+/obj/item/clothing/suit/armor/tiered/power_armor/fh46/bos
+	icon_state = "hardsuit-vault-bos"
+	item_state = "hardsuit-vault-bos"
 
 /obj/item/clothing/suit/armor/tiered/power_armor/t45d
 	name = "T-45d power armor"
@@ -343,6 +360,15 @@
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
 	salvaged_type = /obj/item/clothing/suit/armor/tiered/heavy/salvaged_pa/tier3/t45d
+
+/obj/item/clothing/suit/armor/tiered/power_armor/raider
+	name = "Raider Power Armor"
+	desc = "A shedwork of plates constructed on an old restored PA frame."
+	icon_state = "raiderpa"
+	item_state = "raiderpa"
+	salvaged_type = /obj/item/clothing/suit/armor/tiered/heavy/salvaged_pa/tier3/t45d/raider
+	tier = 3
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_DT_T3)
 
 /obj/item/clothing/suit/armor/tiered/power_armor/t51b
 	name = "T-51b power armor"
@@ -353,6 +379,19 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T1)
 	special_modifications = list("a" = -1, "s" = 3)
 	armor_tier_desc = "This is a suit of power armor, able to withstand a tank shell and still finish a marathon. (-1 Agility, 10% Slowdown, +3 Strength - while powered)"
+
+/obj/item/clothing/suit/armor/tiered/power_armor/t51b/midwest
+	name = "Mid-West power armor"
+	desc = "Mid-western PA, developed by the mid-western BoS. This suit of power armor provides substantial protection to the wearer."
+	icon_state = "midwestgrey_pa"
+	item_state = "midwestgrey_pa"
+
+/obj/item/clothing/suit/armor/tiered/power_armor/t51b/midwest/hardened
+	name = "Hardened Mid-West power armor"
+	icon_state = "midwestpa"
+	item_state = "midwestpa"
+	tier = 5
+	armor = ARMOR_VALUE_SALVAGE_T5
 
 /obj/item/clothing/suit/armor/tiered/power_armor/t51b/hardened
 	name = "Hardened T-51b power armor"

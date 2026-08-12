@@ -519,7 +519,7 @@ Raider
 		///obj/item/gun/ballistic/rifle/hunting = 1,
 		///obj/item/ammo_box/a308 = 1,
 		///obj/item/ammo_box/a308box = 1,
-		/obj/item/gun_upgrade/scope/watchman = 1,
+		/obj/item/gun_upgrade/scope/mid = 1,
 	//	/obj/item/gun/ballistic/revolver/m29=2,
 		/obj/item/storage/belt/shoulderholster=1,
 	//	/obj/item/ammo_box/m44=4,
@@ -905,7 +905,7 @@ Raider
 	faction = FACTION_WASTELAND
 	total_positions = -1
 	spawn_positions = -1
-	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	description = "The most broad and open role, you have arrived in the region for purposes known only to you. Try to make a living for yourself - or simply survive - and craft your own unique story."
 	supervisors = "fate"
 	selection_color = "#dddddd"
 
